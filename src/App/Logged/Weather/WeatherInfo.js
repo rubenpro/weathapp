@@ -94,7 +94,9 @@ function WeatherInfo() {
 
   const save = () => {
     const searches = JSON.parse(sessionStorage.getItem('sessionSearches'));
-    searches.forEach((search) => saveSearch(search));
+    if (searches) {
+      searches.forEach((search) => saveSearch(search));
+    }
   };
 
   const clear = () => sessionStorage.clear();
